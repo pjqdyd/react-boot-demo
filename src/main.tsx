@@ -5,10 +5,8 @@ import { Application, ReactBoot } from '@pjqdyd/react-boot'
 import Router from './router'
 import './index.css'
 
-@Application({ name: 'app' })
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+@Application({ name: 'app', description: '我的应用' })
+//eslint-disable-next-line
 class App implements ReactBoot{
     run () {
         ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
