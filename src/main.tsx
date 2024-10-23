@@ -15,4 +15,8 @@ class App implements ReactBoot{
             </React.StrictMode>
         )
     }
+
+    destroy () {
+        console.log('App destroy')
+    }
 }
