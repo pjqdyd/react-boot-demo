@@ -6,7 +6,7 @@ import { ReactBootApplication } from '@pjqdyd/react-boot'
 import Router from './router'
 import './index.css'
 
-@Application()
+@Application
 //eslint-disable-next-line
 class App implements ReactBootApplication{
     run () {

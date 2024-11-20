@@ -1,12 +1,17 @@
 import { ReactBoot } from '@pjqdyd/react-boot'
 
-
 const {
-    Application,
     createApp,
+    Application,
+    Provider,
+    Consumer,
 } = ReactBoot({
-    name: 'app',
-    description: '我的app'
+    name: Symbol('app'),
+    description: '我的app',
+    modules: import('@/react-modules.ts'),
+    onLoad: () => {}
 });
 
-export { Application, createApp }
+export { Application, Provider, Consumer, createApp }
+
+
