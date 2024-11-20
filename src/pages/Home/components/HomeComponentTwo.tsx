@@ -5,10 +5,7 @@ export interface HomeComponentProps {
     title: string;
 }
 
-@Provider({
-    name: 'HomeComponentTwo',
-    asyncComponent: true
-})
+@Provider({ name: 'HomeComponentTwo', version: '1.0.0' })
 class HomeComponentTwo extends Component<HomeComponentProps, never> {
     constructor(props: HomeComponentProps) {
         super(props);

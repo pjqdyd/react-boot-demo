@@ -8,7 +8,7 @@ const Aaa = NotFoundComponent;
 
 class Home extends React.Component<never, never> {
 
-    @Consumer({ name: 'HomeComponentTwo' })
+    @Consumer({ name: 'HomeComponentTwo', version: '1.0.0' })
     private homeComponentTwo: React.ComponentType;
 
     constructor(props) {
