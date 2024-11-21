@@ -1,23 +1,40 @@
 import viteLogo from "/vite.svg";
 import reactLogo from "@/assets/react.svg";
 import NotFoundComponent from "@/pages/NotFound";
-import React from "react";
+import React, {Suspense} from "react";
 import { Consumer } from "@/react-boot.ts";
 
 const Aaa = NotFoundComponent;
 
-class Home extends React.Component<never, never> {
+interface IState {
+    visible: boolean
+}
+
+class Home extends React.Component<never, IState> {
 
     @Consumer({ name: 'HomeComponentTwo', version: '1.0.0' })
     private homeComponentTwo: React.ComponentType;
 
+    @Consumer({ name: 'HomeComponentThree', version: '1.0.0' })
+    private homeComponentThree: () => Promise<{ default: React.ComponentType }>;
+
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            visible: false,
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({ visible: true })
+        }, 3000)
     }
 
     render() {
         const HomeComponentTwo = this.homeComponentTwo;
+        const HomeComponentThree = React.lazy(this.homeComponentThree);
+
         return (
             <>
                 <div>
@@ -39,7 +56,11 @@ class Home extends React.Component<never, never> {
                 </p>
                 <Aaa></Aaa>
                 <HomeComponentTwo></HomeComponentTwo>
-                {/*<HomeComp title="home"></HomeComp>*/}
+                {this.state.visible && (
+                    <Suspense fallback={<div>loading...</div>}>
+                        <HomeComponentThree></HomeComponentThree>
+                    </Suspense>
+                )}
             </>
         );
     }
