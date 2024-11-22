@@ -1,4 +1,4 @@
-import { ReactBoot } from '@pjqdyd/react-boot'
+import {ReactBoot} from '@pjqdyd/react-boot'
 
 const {
     createApp,
@@ -6,9 +6,8 @@ const {
     Provider,
     Consumer,
 } = ReactBoot({
-    name: Symbol('app'),
+    name: 'app',
     description: '我的app',
-    modules: import('@/react-modules.ts'),
     onLoad: () => {}
 });
 
