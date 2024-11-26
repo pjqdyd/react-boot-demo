@@ -10,6 +10,7 @@ import type { Modules } from "@pjqdyd/react-boot";
 export const modules: Modules = {
     ...import.meta.glob(['./pages/Home/components/HomeComponent.tsx'], { eager: true }),
     ...import.meta.glob(['./pages/Home/components/HomeComponentTwo.tsx'], { eager: true }),
+    ...import.meta.glob('./utils/*.ts', { eager: true }),
     ...withAsyncModules([
         {
             module: import.meta.glob(['./pages/Home/components/HomeComponentThree.tsx'], { eager: false }),

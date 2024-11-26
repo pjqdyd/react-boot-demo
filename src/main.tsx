@@ -7,7 +7,6 @@ import Router from './router'
 import './index.css'
 
 import modules from "@/react-modules.ts";
-// const modules = import('@/react-modules.ts');
 
 @Application({ modules: modules })
 //eslint-disable-next-line

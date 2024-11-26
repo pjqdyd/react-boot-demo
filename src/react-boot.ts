@@ -6,7 +6,7 @@ const {
     Provider,
     Consumer,
 } = ReactBoot({
-    name: 'app',
+    name: Symbol('app'),
     description: '我的app',
     onLoad: () => {}
 });
