@@ -12,13 +12,13 @@ interface IState {
 class Home extends React.Component<never, IState> {
 
     @Consumer({ name: 'HomeComponentTwo', version: '1.0.0' })
-    private homeComponentTwo: React.ComponentType;
+    private HomeComponentTwo: React.ComponentType;
 
     @Consumer({ name: 'HomeComponentThree', version: '1.0.0' })
-    private homeComponentThree: () => Promise<{ default: React.ComponentType }>;
+    private HomeComponentThree: () => Promise<{ default: React.ComponentType }>;
 
     @Consumer({ name: 'Utils', version: '1.0.0' })
-    private utils: UtilsType
+    private Utils: UtilsType
 
     constructor(props) {
         super(props);
@@ -34,8 +34,8 @@ class Home extends React.Component<never, IState> {
     }
 
     render() {
-        const HomeComponentTwo = this.homeComponentTwo;
-        const HomeComponentThree = React.lazy(this.homeComponentThree);
+        const { HomeComponentTwo, Utils} = this;
+        const HomeComponentThree = React.lazy(this.HomeComponentThree);
 
         return (
             <>
@@ -56,7 +56,7 @@ class Home extends React.Component<never, IState> {
                 <p className="read-the-docs">
                     Click on the Vite and React logos to learn more
                 </p>
-                <p>{this.utils.getDate()}</p>
+                <p>{Utils.getDate()}</p>
                 <HomeComponentTwo></HomeComponentTwo>
                 {this.state.visible && (
                     <Suspense fallback={<div>loading...</div>}>
