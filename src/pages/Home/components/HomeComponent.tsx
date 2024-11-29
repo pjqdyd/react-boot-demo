@@ -1,24 +1,18 @@
-import React, {Component} from 'react';
-import { Provider } from "@/react-boot.ts";
+import React, { FunctionComponent, useState } from 'react';
+import { useConsumer, withProvider } from "@/react-boot.ts";
 
 export interface HomeComponentProps {
     title: string;
 }
 
-@Provider({ name: 'HomeComponent', version: '1.0.0' })
-class HomeComponent extends Component<HomeComponentProps, never> {
-    constructor(props: HomeComponentProps) {
-        super(props);
-        this.state = {}
-    }
-
-    render() {
-        return (
-            <div>
-                <h2>HomeComponent {this.props.title}</h2>
-            </div>
-        );
-    }
+const HomeComponent = (props: HomeComponentProps) => {
+    const [title] = useState('标题');
+    const [HomeComponentTwo] = useConsumer<React.ComponentType>({ name: 'HomeComponentTwo', version: '1.0.0' });
+    return (
+        <div>
+            <h2>HomeComponent {title} {props.title}</h2>
+            <HomeComponentTwo />
+        </div>
+    );
 }
-
-export default HomeComponent;
+export default withProvider<FunctionComponent>({ name: 'HomeComponent', version: '1.0.0' })(HomeComponent);

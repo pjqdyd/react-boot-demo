@@ -3,13 +3,18 @@ import reactLogo from "@/assets/react.svg";
 import React, { Suspense } from "react";
 import { Consumer } from "@/react-boot.ts";
 import { UtilsType } from "@/utils/interface.ts";
+import { HomeComponentProps } from "@/pages/Home/components/HomeComponent.tsx";
 
 
 interface IState {
-    visible: boolean
+    visible?: boolean
+    title?: string
 }
 
 class Home extends React.Component<never, IState> {
+
+    @Consumer({ name: 'HomeComponent', version: '1.0.0' })
+    private HomeComponent: HomeComponentProps;
 
     @Consumer({ name: 'HomeComponentTwo', version: '1.0.0' })
     private HomeComponentTwo: React.ComponentType;
@@ -24,6 +29,7 @@ class Home extends React.Component<never, IState> {
         super(props);
         this.state = {
             visible: false,
+            title: 'home'
         }
     }
 
@@ -34,8 +40,9 @@ class Home extends React.Component<never, IState> {
     }
 
     render() {
-        const { HomeComponentTwo, Utils} = this;
+        const { HomeComponent, HomeComponentTwo, Utils} = this;
         const HomeComponentThree = React.lazy(this.HomeComponentThree);
+        const { title } = this.state;
 
         return (
             <>
@@ -57,6 +64,8 @@ class Home extends React.Component<never, IState> {
                     Click on the Vite and React logos to learn more
                 </p>
                 <p>{Utils.getDate()}</p>
+                <button onClick={() => this.setState({ title: `home-new-${new Date().valueOf()}` })}>点击</button>
+                <HomeComponent title={title} />
                 <HomeComponentTwo></HomeComponentTwo>
                 {this.state.visible && (
                     <Suspense fallback={<div>loading...</div>}>
