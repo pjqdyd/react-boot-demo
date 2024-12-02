@@ -6,8 +6,8 @@ const asyncComponent = () => import('./pages/Home/components/HomeComponentThree.
 
 /**
  * 扫描的依赖模块
- * 同步导入 eager: true
- * 异步导入 eager: false
+ * 同步导入 使用import.meta.glob {eager: true}
+ * 异步导入 使用withProvider + import()
  */
 export const modules: Modules = {
     ...import.meta.glob(['./pages/Home/components/HomeComponent.tsx'], { eager: true }),
