@@ -36,7 +36,7 @@ class Home extends React.Component<never, IState> {
     componentDidMount() {
         setTimeout(() => {
             this.setState({ visible: true })
-        }, 3000)
+        }, 5000)
     }
 
     render() {
