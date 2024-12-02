@@ -8,6 +8,7 @@ const {
     Consumer,
     withProvider,
     useConsumer,
+    destroyApp
 } = ReactBoot({
     react: React,
     name: Symbol('app'),
@@ -15,6 +16,6 @@ const {
     onLoad: () => {}
 });
 
-export { Application, Provider, Consumer, createApp, withProvider, useConsumer }
+export { Application, Provider, Consumer, createApp, withProvider, useConsumer, destroyApp }
 
 
