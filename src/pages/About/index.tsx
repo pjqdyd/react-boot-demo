@@ -1,5 +1,5 @@
 import viteLogo from "/vite.svg";
-import reactLogo from "@/assets/react.svg";
+import reactBootLogo from "@/assets/react-boot.svg";
 
 export default function About() {
     return (
@@ -9,7 +9,7 @@ export default function About() {
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                 </a>
                 <a href="https://react.dev" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo" />
+                    <img src={ reactBootLogo as string } className="logo react" alt="React logo" />
                 </a>
             </div>
             <h1>About</h1>

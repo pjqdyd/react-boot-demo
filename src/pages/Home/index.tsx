@@ -1,5 +1,5 @@
 import viteLogo from "/vite.svg";
-import reactLogo from "@/assets/react.svg";
+import reactBootLogo from "@/assets/react-boot.svg";
 import React, { Suspense } from "react";
 import { Consumer } from "@/react-boot.ts";
 import { UtilsType } from "@/utils/interface.ts";
@@ -51,7 +51,7 @@ class Home extends React.Component<never, IState> {
                         <img src={viteLogo} className="logo" alt="Vite logo"/>
                     </a>
                     <a href="https://react.dev" target="_blank">
-                        <img src={reactLogo as string} className="logo react" alt="React logo"/>
+                        <img src={reactBootLogo as string} className="logo react" alt="React logo"/>
                     </a>
                 </div>
                 <h1>HOME</h1>
