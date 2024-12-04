@@ -16,7 +16,7 @@ class Home extends React.Component<never, IState> {
     @Consumer({ name: 'HomeComponent', version: '1.0.0' })
     private HomeComponent: HomeComponentProps;
 
-    @Consumer({ name: 'HomeComponentTwo', version: '1.0.0' })
+    @Consumer({ name: 'HomeComponentTwo' })
     private HomeComponentTwo: React.ComponentType;
 
     @Consumer({ name: 'HomeComponentThree', version: '1.0.0' })

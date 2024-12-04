@@ -13,7 +13,7 @@ const {
     react: React,
     name: Symbol('app'),
     description: '我的app',
-    onLoad: () => {}
+    onload: () => {}
 });
 
 export { Application, Provider, Consumer, createApp, withProvider, useConsumer, destroyApp }

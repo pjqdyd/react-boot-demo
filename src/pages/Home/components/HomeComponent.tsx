@@ -7,7 +7,7 @@ export interface HomeComponentProps {
 
 const HomeComponent = (props: HomeComponentProps) => {
     const [title] = useState('标题');
-    const [HomeComponentTwo] = useConsumer<React.ComponentType>({ name: 'HomeComponentTwo', version: '1.0.0' });
+    const [HomeComponentTwo] = useConsumer<React.ComponentType>({ name: 'HomeComponentTwo' });
     return (
         <div>
             <h2>HomeComponent {title} {props.title}</h2>
