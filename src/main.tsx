@@ -10,16 +10,12 @@ import modules from "@/react-modules.ts";
 
 @Application({ modules: modules })
 //eslint-disable-next-line
-class App implements ReactBootApplication{
+class App implements ReactBootApplication {
     run () {
         ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <React.StrictMode>
                 <RouterProvider router={Router} />
             </React.StrictMode>
         )
-    }
-
-    destroy () {
-        console.log('App destroy')
     }
 }

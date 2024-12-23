@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
+import type { HomeComponentProps } from "@/pages/Home/types";
 
-export interface HomeComponentProps {
-    title: string;
-}
-
-class HomeComponentThree extends Component<HomeComponentProps, never> {
+/**
+ * 首页异步组件
+ */
+class AsyncComponent extends Component<HomeComponentProps, never> {
     constructor(props: HomeComponentProps) {
         super(props);
         this.state = {}
@@ -19,4 +19,4 @@ class HomeComponentThree extends Component<HomeComponentProps, never> {
     }
 }
 
-export default HomeComponentThree;
+export default AsyncComponent;
