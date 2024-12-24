@@ -28,6 +28,6 @@ const Router = createBrowserRouter([
         path: '*',
         element: <NotFound />,
     }
-])
+], { basename: '/react-boot-demo' })
 
 export default Router
