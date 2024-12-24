@@ -1,0 +1,1 @@
+import{r as s,j as e}from"./index-B8qEXQ9z.js";class n extends s.Component{constructor(t){super(t),this.state={}}render(){return e.jsx("div",{children:e.jsxs("h2",{children:["HomeComponentThree ",this.props.title]})})}}export{n as default};
